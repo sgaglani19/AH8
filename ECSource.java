@@ -11,7 +11,16 @@ class Node<T> {
 class ECSource {
   public static <T> T getNodeValue(Node<T> head, int index) {
     // todo - note the return type, but don't overthink it
-    return;
+    Node<T> curr = head;
+    int counter = 0;
+    while(curr != null){
+      if(counter == index){
+        return curr.val;
+      }
+      counter++;
+      curr = curr.next;
+    }
+    return null;
   }
   
   public static void main(String[] args) {
@@ -24,6 +33,6 @@ class ECSource {
 
     // banana -> mango -> kiwi
 
-    System.out.println(ECSource.getNodeValue(node1, 1));
+    System.out.println(ECSource.getNodeValue(node1, 0));
   }
 }
